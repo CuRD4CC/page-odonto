@@ -106,7 +106,9 @@
                   <div class="container">
                      <div class="carousel-caption">
                         <div class="text-bg">
-                           <h1> <span class="blu">Welcome <br></span>To Our Sunglasses</h1>
+                           <h1> 
+                              <span class="blu">{% block title_head %}{% endblock title_head %} <br></span>{% block h1_tratamiento1 %}{% endblock h1_tratamiento1 %}
+                           </h1>
                            <figure><img src="{% static 'images/banner_img.png' %}" alt="#"/></figure>
                            <a class="read_more" href="#">Shop Now</a>
                         </div>
@@ -117,7 +119,9 @@
                   <div class="container">
                      <div class="carousel-caption">
                         <div class="text-bg">
-                           <h1> <span class="blu">Welcome <br></span>To Our Sunglasses</h1>
+                           <h1> 
+                              <span class="blu">{% block title_head2 %}{% endblock title_head2 %} <br></span>{% block h1_tratamiento2 %}{% endblock h1_tratamiento2 %}
+                           </h1>
                            <figure><img src="{% static 'images/banner_img.png' %}" alt="#"/></figure>
                            <a class="read_more" href="#">Shop Now</a>
                         </div>
@@ -128,7 +132,9 @@
                   <div class="container">
                      <div class="carousel-caption">
                         <div class="text-bg">
-                           <h1> <span class="blu">Welcome <br></span>To Our Sunglasses</h1>
+                           <h1> 
+                              <span class="blu">{% block title_head3 %}{% endblock title_head3 %} <br></span>{% block h1_tratamiento3 %}{% endblock h1_tratamiento3 %}
+                           </h1>
                            <figure><img src="{% static "images/banner_img.png" %}" alt="#"/></figure>
                            <a class="read_more" href="#">Shop Now</a>
                         </div>
@@ -410,13 +416,13 @@
       </footer>
       <!-- end footer -->
       <!-- Javascript files-->
-      <script src="js/jquery.min.js"></script>
-      <script src="js/popper.min.js"></script>
-      <script src="js/bootstrap.bundle.min.js"></script>
-      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="{% static 'js/jquery.min.js' %}"></script>
+      <script src="{% static 'js/popper.min.js' %}"></script>
+      <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+      <script src="{% static 'js/jquery-3.0.0.min.js' %}"></script>
       <!-- sidebar -->
-      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-      <script src="js/custom.js"></script>
+      <script src="{% static "js/jquery.mCustomScrollbar.concat.min.js" %}"></script>
+      <script src="{% static "js/custom.js" %}"></script>
       <script>
          // This example adds a marker to indicate the position of Bondi Beach in Sydney,
          // Australia.
