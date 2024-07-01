@@ -306,7 +306,7 @@ button {
 
 .header {
      width: 100%;
-     padding: 30px 30px;
+     padding: 20px 20px;
      background: transparent;
      position: absolute;
      z-index: 999;
@@ -333,7 +333,7 @@ button {
      color: #070404;
      font-size: 60px;
      line-height: 76px;
-     padding-bottom: 45px;
+     padding-bottom: 5px;
      font-weight: bold;
      text-transform: uppercase;
 }

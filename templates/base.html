@@ -47,7 +47,7 @@
                      <div class="full">
                         <div class="center-desk">
                            <div class="logo">
-                              <a href="index.html"><img src="{% static 'images/logo.png' %}" alt="#" /></a>
+                              <a href="index.html"><img src="{% static 'images/logo_grande.png' %}" alt="#" width="200"/></a>
                            </div>
                         </div>
                      </div>
@@ -72,7 +72,7 @@
                                  <a class="nav-link" href="contact.html">Contactanos</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="about.html">Acerca de mi</a>
+                                 <a class="nav-link" href={% url "acercademi" %}>Acerca de mi</a>
                               </li>
                               <li class="nav-item d_none login_btn">
                                  <a class="nav-link" href="#">Login</a>
@@ -107,9 +107,9 @@
                      <div class="carousel-caption">
                         <div class="text-bg">
                            <h1> 
-                              <span class="blu">{% block title_head %}{% endblock title_head %} <br></span>{% block h1_tratamiento1 %}{% endblock h1_tratamiento1 %}
+                              <span class="blu">{% block title_head %}{% endblock title_head %} </span>
                            </h1>
-                           <figure><img src="{% static 'images/ortodoncia.png' %}" alt="#"/></figure>
+                           <figure><img src="{% static 'images/ortodoncia.png' %}" alt="#" width="475"/></figure>
                            <a class="read_more" href="#">Shop Now</a>
                         </div>
                      </div>
@@ -120,9 +120,9 @@
                      <div class="carousel-caption">
                         <div class="text-bg">
                            <h1> 
-                              <span class="blu">{% block title_head2 %}{% endblock title_head2 %} <br></span>{% block h1_tratamiento2 %}{% endblock h1_tratamiento2 %}
+                              <span class="blu">{% block title_head2 %}{% endblock title_head2 %}</span>
                            </h1>
-                           <figure><img src="{% static 'images/odontologia_general.png' %}" alt="#"/></figure>
+                           <figure><img src="{% static 'images/odontologia_general.png' %}" alt="#" width="475"/></figure>
                            <a class="read_more" href="#">Shop Now</a>
                         </div>
                      </div>
@@ -133,9 +133,9 @@
                      <div class="carousel-caption">
                         <div class="text-bg">
                            <h1> 
-                              <span class="blu">{% block title_head3 %}{% endblock title_head3 %} <br></span>{% block h1_tratamiento3 %}{% endblock h1_tratamiento3 %}
+                              <span class="blu">{% block title_head3 %}{% endblock title_head3 %}</span>
                            </h1>
-                           <figure><img src="{% static 'images/cirugia_oral.png' %}" alt="#"/></figure>
+                           <figure><img src="{% static 'images/cirugia_oral.png' %}" alt="#" width="475"/></figure>
                            <a class="read_more" href="#">Shop Now</a>
                         </div>
                      </div>
