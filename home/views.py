@@ -5,3 +5,6 @@ def inicio(request):
 
 def acercademi(request):
     return render(request, 'home/about.html')
+
+def contacto(request):
+    return render(request, 'home/contacto.html')
