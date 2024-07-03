@@ -47,7 +47,7 @@
                      <div class="full">
                         <div class="center-desk">
                            <div class="logo">
-                              <a href="index.html"><img src="{% static 'images/logo_grande.png' %}" alt="#" width="200"/></a>
+                              <a href="{% url "inicio" %}"><img src="{% static 'images/logo_grande.png' %}" alt="#" width="200"/></a>
                            </div>
                         </div>
                      </div>
@@ -66,13 +66,13 @@
                                  <a class="nav-link" href="glasses.html">sin idea</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="shop.html">Tratamientos</a>
+                                 <a class="nav-link" href={% url 'tratamientos' %}>Tratamientos</a>
                               </li>
                               <li class="nav-item">
                                  <a class="nav-link" href={% url 'contactanos' %}>Contactanos</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href={% url "acercademi" %}>Acerca de mi</a>
+                                 <a class="nav-link" href={% url 'acercademi' %}>Acerca de mi</a>
                               </li>
                               <li class="nav-item d_none login_btn">
                                  <a class="nav-link" href="#">Login</a>

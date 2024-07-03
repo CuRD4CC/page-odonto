@@ -8,3 +8,6 @@ def acercademi(request):
 
 def contacto(request):
     return render(request, 'home/contacto.html')
+
+def tratamiento(request):
+    return render(request, 'home/tratamientos.html')
