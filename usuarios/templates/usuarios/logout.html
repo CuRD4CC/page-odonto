@@ -1,0 +1,14 @@
+{% extends "sub_base.html" %}
+{% load static %}
+
+{% block content %}
+
+<form action={% url "logout" %} method="POST">
+    {% csrf_token %}
+    <p>
+        ¿Desea cerrar sesion?
+    </p> 
+    <input type="submit" value="Cerrar sesion">
+</form>
+
+{% endblock content %}
