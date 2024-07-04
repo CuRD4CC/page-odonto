@@ -1,0 +1,19 @@
+{% extends "sub_base.html" %}
+{% load static %}
+
+{% block tittle %}
+Iniciar sesion
+{% endblock tittle %}
+
+{% block content %}
+
+<form action={% url "login" %} method="POST">
+    {% csrf_token %}
+    {{formulario}}
+    <input type="submit" value="Iniciar sesion">
+</form>
+
+
+
+
+{% endblock content %}
