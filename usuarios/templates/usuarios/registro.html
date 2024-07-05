@@ -2,20 +2,20 @@
 {% load static %}
 
 {% block title %}
-Iniciar sesion
+Registro
 {% endblock title %}
 
 {% block content %}
 
 <div id="login" class="login">
     <div class="container">
-       <div class="row">
+        <div class="row">
           <div class="col-md-6">
-             <form action={% url "login" %} method="POST" id="loginForm" class="main_form">
+             <form action={% url "registro" %} method="POST" id="loginForm" class="main_form">
                 {% csrf_token %}
                 <div class="row">
                    <div class="col-md-12 ">
-                      <h3>Iniciar sesión</h3>
+                      <h3>Registrarse</h3>
                    </div>
                    <div class="col-md-12 ">
                       <input class="contactus" placeholder="Usuario" type="text" name="username"> 
@@ -24,7 +24,7 @@ Iniciar sesion
                       <input class="contactus" placeholder="Contraseña" type="password" name="password">
                    </div>
                    <div class="col-md-12">
-                      <button type="submit" class="send_btn">Iniciar sesión</button>
+                      <button type="submit" class="send_btn">Registrarse</button>
                    </div>
                 </div>
              </form>
@@ -35,4 +35,3 @@ Iniciar sesion
 
 
 {% endblock content %}
-
