@@ -255,6 +255,17 @@ button {
 
 /*-- navigation--*/
 
+button.nav-link {
+     border: 0;
+     margin: 0;
+     padding: 0;
+     cursor: pointer;
+     background: none; /* Asegura que el botón no tenga un fondo */
+     color: inherit; /* Hereda el color del texto de su padre */
+     text-align: inherit; /* Hereda la alineación del texto de su padre */
+     display: inline; /* Asegura que el botón se muestre en línea con otros elementos */
+ }
+
 .navigation.navbar {
      float: right;
      background: #fff;
@@ -287,7 +298,7 @@ button {
      padding-right: 10px;
 }
 
-.login_btn a, .login_btn button {
+.login_btn a {
      background: #ff9eaf;
      padding: 9px 32px !important;
      display: inline;
@@ -296,7 +307,7 @@ button {
      margin: 0 10px;
 }
 
-.login_btn a:hover, .login_btn button:hover {
+.login_btn a:hover {
      background: #000 !important;
 }
 

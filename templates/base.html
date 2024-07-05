@@ -75,16 +75,18 @@
                                  <a class="nav-link" href={% url 'acercademi' %}>Acerca de mi</a>
                               </li>
                               {% if request.user.is_authenticated %}
+                              <li class="nav-item d_none login_btn">
+                                 <a class="nav-link" href="#">{{request.user.username}}</a>
+                              </li>
+                              <li class="nav-item">
                                  <form action={% url "logout" %} method="POST">
                                     {% csrf_token %}
-                                    <li class="nav-item d_none login_btn">
-                                       <button type="submit" class="nav-link">Cerrar sesion</button>
-                                    </li>
+                                    <button type="submit" class="nav-link">Cerrar sesion</button>
                                  </form>
-
+                              </li>
                               {% else %}
-                                 <li class="nav-item d_none login_btn">
-                                    <a class="nav-link" href={% url "login" %}>Login</a>
+                                 <li class="nav-item">
+                                    <a class="nav-link" href={% url 'login' %}>Login</a>
                                  </li>
                                  <li class="nav-item d_none">
                                     <a class="nav-link" href="#">Registrar</a>
