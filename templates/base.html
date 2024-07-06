@@ -76,7 +76,7 @@
                               </li>
                               {% if request.user.is_authenticated %}
                               <li class="nav-item d_none login_btn">
-                                 <a class="nav-link" href="#">{{request.user.username}}</a>
+                                 <a class="nav-link" href={% url "editar_perfil" %}>{{request.user.username}}</a>
                               </li>
                               <li class="nav-item">
                                  <form action={% url "logout" %} method="POST">

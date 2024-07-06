@@ -1,0 +1,44 @@
+{% extends "sub_base.html" %}
+{% load static %}
+
+{% block title %}
+Registro
+{% endblock title %}
+
+{% block content %}
+
+<div id="register" class="register">
+    <div class="container">
+       <div class="row">
+          <div class="col-md-6">
+             <form action="{% url 'editar_perfil' %}" method="POST" id="registerForm" class="main_form">
+                {% csrf_token %}
+                <div class="row">
+                   <div class="col-md-12">
+                      <h3>Editar Perfil</h3>
+                   </div>
+                   <div class="col-md-12">
+                         {{ formulario.username }}
+                   </div>
+                   <div class="col-md-12">
+                         {{ formulario.email }}
+                   </div>
+                   <div class="col-md-12">
+                         {{ formulario.first_name }}
+                   </div>
+                   <div class="col-md-12">
+                         {{ formulario.last_name }}
+                   </div>
+                   <div class="col-md-12">
+                      <button type="submit" class="send_btn">Guardar</button>
+                   </div>
+                </div>
+             </form>
+          </div>
+       </div>
+    </div>
+ </div>
+ 
+
+
+{% endblock content %}
