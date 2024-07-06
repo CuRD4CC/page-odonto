@@ -7,30 +7,36 @@ Registro
 
 {% block content %}
 
-<div id="login" class="login">
-    <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-             <form action={% url "registro" %} method="POST" id="loginForm" class="main_form">
-                {% csrf_token %}
-                <div class="row">
-                   <div class="col-md-12 ">
-                      <h3>Registrarse</h3>
-                   </div>
-                   <div class="col-md-12 ">
-                      <input class="contactus" placeholder="Usuario" type="text" name="username"> 
-                   </div>
-                   <div class="col-md-12">
-                      <input class="contactus" placeholder="Contraseña" type="password" name="password">
-                   </div>
-                   <div class="col-md-12">
-                      <button type="submit" class="send_btn">Registrarse</button>
-                   </div>
-                </div>
-             </form>
-          </div>
-       </div>
-    </div>
+<div id="register" class="register">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-6">
+            <form action="{% url 'registro' %}" method="POST" id="registerForm" class="main_form">
+               {% csrf_token %}
+               <div class="row">
+                  <div class="col-md-12">
+                     <h3>Registro</h3>
+                  </div>
+                  <div class="col-md-12">
+                        {{ formulario.username }}
+                  </div>
+                  <div class="col-md-12">
+                        {{ formulario.email }}
+                  </div>
+                  <div class="col-md-12">
+                     {{ formulario.password1 }}
+                  </div>
+                  <div class="col-md-12">
+                     {{ formulario.password2 }}
+                  </div>
+                  <div class="col-md-12">
+                     <button type="submit" class="send_btn">Registrar</button>
+                  </div>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
 </div>
 
 
