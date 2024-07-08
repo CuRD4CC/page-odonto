@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm, PasswordChangeForm
 from django.contrib.auth.models import User
 
 class NuestroFormularioRegistro(UserCreationForm):
@@ -33,16 +33,15 @@ class EditarPerfil(UserChangeForm):
             'username': forms.TextInput(attrs={'class': 'contactus', 'placeholder': 'Usuario'}),
         }
 
-# from django import forms
-# from django.contrib.auth.forms import UserCreationForm
-# from django.contrib.auth.models import User
+class CambiarPassword(PasswordChangeForm):
+    old_password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'contactus', 'placeholder': 'Contraseña actual'}))
+    new_password1 = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'contactus', 'placeholder': 'Nueva contraseña'}))
+    new_password2 = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'contactus', 'placeholder': 'Confirmar nueva contraseña'}))
 
-# class NuestroFormularioRegistro(UserCreationForm):
-#     email = forms.EmailField
-#     password1 = forms.CharField(label='Contrasenia', widget=forms.PasswordInput)
-#     password2 = forms.CharField(label='Repetir Contrasenia', widget=forms.PasswordInput)
-    
-#     class Meta:
-#         model = User
-#         fields = ['username', 'email', 'password1', 'password2']
-#         help_texts = {key: '' for key in fields}
+    class Meta:
+        fields = ['old_password', 'new_password1', 'new_password2']
+        help_texts = {
+            'old_password': 'Introduce tu contraseña actual',
+            'new_password1': 'Introduce tu nueva contraseña',
+            'new_password2': 'Confirma tu nueva contraseña',
+        }

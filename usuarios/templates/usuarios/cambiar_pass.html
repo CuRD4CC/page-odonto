@@ -1,0 +1,40 @@
+{% extends "sub_base.html" %}
+{% load static %}
+
+{% block title %}
+Cambiar Contraseña
+{% endblock title %}
+
+{% block content %}
+
+<div id="login" class="login">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <form action="{% url "cambiar_pass" %}" method="POST" id="loginForm" class="main_form">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-12 ">
+                            <h3>Cambiar contraseña</h3>
+                        </div>
+                        <div class="col-md-12 ">
+                            {{ form.old_password }}
+                        </div>
+                        <div class="col-md-12">
+                            {{ form.new_password1 }}
+                        </div>
+                        <div class="col-md-12">
+                            {{ form.new_password2 }}
+                        </div>
+                        <div class="col-md-12">
+                            <button type="submit" class="send_btn">Cambiar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
