@@ -11,7 +11,7 @@ Editar Perfil
    <div class="container">
       <div class="row">
          <div class="col-md-6">
-            <form action="{% url 'editar_perfil' %}" method="POST" id="registerForm" class="main_form">
+            <form action="{% url 'editar_perfil' %}" method="POST" id="registerForm" class="main_form" enctype="multipart/form-data">
                {% csrf_token %}
                <div class="row">
                   <div class="col-md-12">
@@ -28,6 +28,9 @@ Editar Perfil
                   </div>
                   <div class="col-md-12">
                      {{ formulario.last_name }}
+                  </div>
+                  <div class="col-md-12">
+                     {{ formulario_datos_extra.avatar }}
                   </div>
                   <div class="col-md-12">
                      <a href="{% url 'cambiar_pass' %}" class="send_btn">Contraseña</a>

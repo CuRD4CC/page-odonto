@@ -6,6 +6,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import PasswordChangeView
 from django.urls import reverse_lazy
+from usuarios.forms import DatosExtraForm
+from usuarios.models import DatosExtra
 
 def user_login(request):
     formulario = AuthenticationForm()
@@ -20,6 +22,7 @@ def user_login(request):
             user = authenticate(username=usuario, password=contrasenia)
             if user is not None:
                 django_login(request, user)
+                DatosExtra.objects.get_or_create(user=user)
                 return redirect('inicio')
             else:
                 formulario.add_error(None, 'Usuario o contraseña incorrectos.')
@@ -46,13 +49,16 @@ def registro(request):
 @login_required
 def editar_perfil(request):
     if request.method == 'POST':
-        formulario = EditarPerfil(request.POST, instance=request.user)
+        formulario = EditarPerfil(request.POST, request.FILES, initial={'avatar': request.user.datosextra.avatar}, instance=request.user)
+        formulario_datos_extra = DatosExtraForm(request.POST, request.FILES, instance=request.user.datosextra)
         if formulario.is_valid():
             formulario.save()
+            formulario_datos_extra.save()
             return redirect('editar_perfil')
     else:
         formulario = EditarPerfil(instance=request.user)
-    return render(request, 'usuarios/editar_perfil.html', {'formulario': formulario})
+        formulario_datos_extra = DatosExtraForm(instance=request.user.datosextra)
+    return render(request, 'usuarios/editar_perfil.html', {'formulario': formulario, 'formulario_datos_extra': formulario_datos_extra})
 
 class CambiarPassword(LoginRequiredMixin, PasswordChangeView):
     form_class = NuestroFormularioCambiarPassword

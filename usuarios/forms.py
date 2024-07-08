@@ -1,6 +1,8 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm, PasswordChangeForm
 from django.contrib.auth.models import User
+from django.forms import ModelForm
+from usuarios.models import DatosExtra
 
 class NuestroFormularioRegistro(UserCreationForm):
     email = forms.EmailField(widget=forms.TextInput(attrs={'class': 'contactus', 'placeholder': 'Email'}))
@@ -20,10 +22,11 @@ class EditarPerfil(UserChangeForm):
     email = forms.EmailField(widget=forms.TextInput(attrs={'class': 'contactus', 'placeholder': 'Email'}))
     first_name = forms.CharField(widget=forms.TextInput(attrs={'class': 'contactus', 'placeholder': 'Nombre'}))
     last_name = forms.CharField(widget=forms.TextInput(attrs={'class': 'contactus', 'placeholder': 'Apellido'}))
+    avatar = forms.ImageField(required=False, widget=forms.FileInput)
     
     class Meta:
         model = User
-        fields = ['email', 'first_name', 'last_name']
+        fields = ['email', 'first_name', 'last_name', 'avatar']
         help_texts = {
         'email': 'Introduce tu dirección de correo electrónico',
         'first_name': 'Introduce tu nombre',
@@ -32,6 +35,11 @@ class EditarPerfil(UserChangeForm):
         widgets = {
             'username': forms.TextInput(attrs={'class': 'contactus', 'placeholder': 'Usuario'}),
         }
+
+class DatosExtraForm(ModelForm):
+    class Meta:
+        model = DatosExtra
+        fields = ('avatar',)
 
 class CambiarPassword(PasswordChangeForm):
     old_password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'contactus', 'placeholder': 'Contraseña actual'}))
