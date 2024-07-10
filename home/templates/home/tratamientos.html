@@ -7,7 +7,47 @@ Tratamientos
 
 {% block content %}
 <!-- Our  Glasses section -->
-<div class="glasses">
+<!DOCTYPE html>
+<html>
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta charset="UTF-8">
+   <title>Responsive Box Model</title>
+   <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+   <div class="container-tratamientos">
+      <div clas="card">
+         <div class="imgBx">
+            <img src="{% static 'images/odontologia_general.png' %}">
+         </div>
+         <div class="content">
+            <h2>Card one</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, quaerat ipsum? Soluta reprehenderit, minima quae reiciendis nihil qui quisquam, veniam tempora tenetur, cumque enim obcaecati? Quod, sequi. Eos, ipsum illo?</p>
+         </div>
+      </div>
+      <div clas="card">
+         <div class="imgBx">
+            <img src="{% static 'images/ortodoncia.png' %}">
+         </div>
+         <div class="content">
+            <h2>Card one</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, quaerat ipsum? Soluta reprehenderit, minima quae reiciendis nihil qui quisquam, veniam tempora tenetur, cumque enim obcaecati? Quod, sequi. Eos, ipsum illo?</p>
+         </div>
+      </div>
+      <div clas="card">
+         <div class="imgBx">
+            <img src="{% static 'images/cirugia_oral.png' %}">
+         </div>
+         <div class="content">
+            <h2>Card one</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, quaerat ipsum? Soluta reprehenderit, minima quae reiciendis nihil qui quisquam, veniam tempora tenetur, cumque enim obcaecati? Quod, sequi. Eos, ipsum illo?</p>
+         </div>
+      </div>
+   </div>
+</body>
+</html>
+{% comment %} <div class="glasses">
    <div class="container">
       <div class="row">
          <div class="col-md-10 offset-md-1">
@@ -93,6 +133,6 @@ Tratamientos
            <a class="read_more" href="#">Read More</a>
        </div>
    </div>
-</div>
+</div> {% endcomment %}
 <!-- end Our  Glasses section -->
 {% endblock content %}
