@@ -264,7 +264,7 @@ button.nav-link {
      color: inherit; /* Hereda el color del texto de su padre */
      text-align: inherit; /* Hereda la alineación del texto de su padre */
      display: inline; /* Asegura que el botón se muestre en línea con otros elementos */
- }
+}
 
 .navigation.navbar {
      float: right;
