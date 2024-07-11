@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-*
+/* *
 {
     margin: 0;
     padding:0;
@@ -11,8 +11,36 @@ body
     justify-content: center;
     align-items: center;
     background: #16384c;
+} */
+.parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ajusta esto a la altura que necesites */
 }
-.container-tratamientos
+
+.container-tratamientos {
+    position: relative;
+    width: 100%; /* Asegúrate de que el contenedor tenga el ancho completo */
+    display: flex;
+    justify-content: space-around; /* Esto añade un espacio alrededor de las tarjetas */
+    align-items: flex-start; /* Alinea las tarjetas al inicio del contenedor */
+    flex-wrap: wrap; /* Esto permite que las tarjetas se envuelvan a la siguiente línea */
+    padding: 30px;
+    margin: auto;
+}
+
+/* .container-tratamientos {
+    position: relative;
+    width: 1100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 30px;
+    margin: auto;
+} */
+/* .container-tratamientos
 {
     position: relative;
     width: 1100px;
@@ -20,27 +48,69 @@ body
     justify-content: center;
     align-items: wrap;
     padding: 30px;
-}
+} */
+
 .container-tratamientos .card
 {
     position: relative;
-    max-width: 300px;
-    height: 420px;
+    max-width: calc(33.33% - 60px); /* Esto asegura que haya tres tarjetas por fila, teniendo en cuenta los márgenes */
+    height: 215px;
     background: #fff;
     margin: 30px 10px;
     padding: 20px 15px;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    transition: 0.3s ease-in-out;
+}
+
+/* .container-tratamientos .card
+{
+    position: relative;
+    max-width: 300px;
+    height: 215px;
+    background: #fff;
+    margin: 30px 10px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    transition: 0.3s ease-in-out;
+} */
+.container-tratamientos .card:hover
+{
+    height: 420px;
 }
 .container-tratamientos .card .imgBx
 {
     position: relative;
     width: 260px;
     height: 260px;
+    top: -60px;
+    left: 4px;
+    z-index: 1;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
 }
 .container-tratamientos .card .imgBx img
 {
     max-width: 100%;
     border-radius: 4px;
-
+}
+.container-tratamientos .card .content
+{
+    position: relative;
+    margin-top: -140px;
+    padding: 10px 15px;
+    text-align: center;
+    color: #111;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+.container-tratamientos .card:hover .content
+{
+    visibility: visible;
+    opacity: 1;
+    margin-top: -40px;
+    transition-delay: 0.3s;
 }

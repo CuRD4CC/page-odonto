@@ -78,10 +78,10 @@
                               <li class="nav-item d_none login_btn">
                                  <a class="nav-link" href={% url "editar_perfil" %}>
                                     {{request.user.username}}
+                                    </a>
                                     {% if request.user.datosextra.avatar %}
                                     <img src="{{ request.user.datosextra.avatar.url }}" alt="Avatar" width="20" height="20">
                                     {% endif %}
-                                 </a>
                               </li>
                               <li class="nav-item">
                                  <form action={% url "logout" %} method="POST">
