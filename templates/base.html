@@ -6,6 +6,7 @@
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
@@ -15,6 +16,8 @@
       <meta name="author" content="">
       <!-- bootstrap css -->
       <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+      <!-- style css2 -->
+      <link rel="stylesheet" href="{% static 'css/style2.css' %}">
       <!-- style css -->
       <link rel="stylesheet" href="{% static 'css/style.css' %}">
       <!-- Responsive-->
@@ -139,7 +142,7 @@
                            <h1> 
                               <span class="blu">{% block title_head2 %}{% endblock title_head2 %}</span>
                            </h1>
-                           <figure><img src="{% static 'images/odontologia_general.png' %}" alt="#" width="475"/></figure>
+                           <figure><img src="{% static 'images/endodoncia.png' %}" alt="#" width="475"/></figure>
                            <a class="read_more" href="#">Shop Now</a>
                         </div>
                      </div>
@@ -152,7 +155,7 @@
                            <h1> 
                               <span class="blu">{% block title_head3 %}{% endblock title_head3 %}</span>
                            </h1>
-                           <figure><img src="{% static 'images/cirugia_oral.png' %}" alt="#" width="475"/></figure>
+                           <figure><img src="{% static 'images/implantes.png' %}" alt="#" width="475"/></figure>
                            <a class="read_more" href="#">Shop Now</a>
                         </div>
                      </div>
@@ -457,9 +460,9 @@
            });
          }
       </script>
-      <!-- google map js -->
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8eaHt9Dh5H57Zh0xVTqxVdBFCvFMqFjQ&callback=initMap"></script>
-      <!-- end google map js --> 
+      <!-- scripts buscador -->
+      <script src="{% static "script.js" %}"></script>
+      <!-- end buscador -->
    </body>
 </html>
 
