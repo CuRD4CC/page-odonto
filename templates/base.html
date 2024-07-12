@@ -100,9 +100,15 @@
                                     <a class="nav-link" href={% url "registro" %}>Registrar</a>
                                  </li>
                               {% endif %}
-                              <li class="nav-item d_none sea_icon">
+                              {% comment %} <li class="nav-item d_none sea_icon">
                                  <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
-                              </li>
+                              </li> {% endcomment %}
+                              <div class="flexbox">
+                                 <div class="buscar">
+                                    <h1></h1>
+                                 <div>
+                                 <input type="text" placeholder="Buscar.." required>
+                              </div>
                            </ul>
                         </div>
                      </nav>

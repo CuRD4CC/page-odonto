@@ -187,3 +187,65 @@ body
     justify-content: center;
     align-items: center;
 }
+
+/*          Buscador */
+.flexbox{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.buscar
+{
+    margin: -20px;
+}
+/* .buscar >h1
+{
+    color: blue;
+    margin-bottom: 15px;
+} */
+.buscar>div
+{
+    display: inline-block;
+    position: relative;
+}
+.buscar>div:after
+{
+    content: "";
+    background: black;
+    width: 4px;
+    height: 20px;
+    position: absolute;
+    top: 18px;
+    right: -4px;
+    transform: rotate(134deg);
+}
+.buscar >div>input
+{
+    color: black;
+    font-size: 16px;
+    background: transparent;
+    width: 25px;
+    height: 25px;
+    padding: 10px;
+    border: solid 3px black;
+    outline: none;
+    border-radius: 35px;
+    transition: width 0.5s;
+}
+.buscar >div input::placeholder
+{
+    color: black;
+    opacity: 0;
+    transition: opacity 150ms ease-out;
+}
+.buscar >div >input:focus::placeholder
+{
+    opacity: 1;
+}
+.buscar>div>input:focus,
+.buscar>div>input:not(:placeholder-shown)
+{
+width: 250px;
+}
