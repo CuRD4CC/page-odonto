@@ -3,12 +3,8 @@ from home import views
 
 urlpatterns = [
     path('', views.inicio, name='inicio'),
-    path('acercademi', views.acercademi, name='acercademi'),
-    path('contactanos', views.contacto, name='contactanos'),
-    path('tratamientos', views.tratamiento, name='tratamientos'),
-    # path('profesor/', views.profesor, name='profesor'),
-    # path('alumno/', views.alumno, name='alumno'),
-    # path('especializaciones/', views.especializacion, name='especializacion'),
-    # path('cursos/', views.curso, name='curso'),
-    # path('buscar/', views.buscar, name='buscar'),
+    path('acercademi/', views.acercademi, name='acercademi'),
+    path('contactanos/', views.contacto, name='contactanos'),
+    path('tratamientos/', views.tratamiento, name='tratamientos'),
+    path('tratamientos/endodoncia/', views.tratamiento_endodoncia, name='endodoncia'),
 ]

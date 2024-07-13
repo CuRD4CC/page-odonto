@@ -11,3 +11,6 @@ def contacto(request):
 
 def tratamiento(request):
     return render(request, 'home/tratamientos.html')
+
+def tratamiento_endodoncia(request):
+    return render(request, 'home/endodoncia.html')
