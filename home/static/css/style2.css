@@ -90,7 +90,6 @@ body
         height: 300px;
     }
 }
-
 .container-tratamientos .card .imgBx img {
     max-width: 100%;
     border-radius: 4px;
@@ -193,24 +192,11 @@ body
     width: 100%;
     height: 100%;
     display: flex;
-<<<<<<< HEAD
-    justify-content: center;
-=======
     justify-content: flex-start;
->>>>>>> 6b50466 (recuperando del error de git)
     align-items: center;
 }
 .buscar
 {
-<<<<<<< HEAD
-    margin: -20px;
-}
-/* .buscar >h1
-{
-    color: blue;
-    margin-bottom: 15px;
-} */
-=======
     margin: 0; /* Elimina el margen negativo */
     position: absolute; /* Posiciona el elemento de forma absoluta */
     right: 40px; /* Mueve el elemento hacia la derecha */
@@ -221,7 +207,6 @@ body
     color: blue;
     margin-bottom: 15px;
 }
->>>>>>> 6b50466 (recuperando del error de git)
 .buscar>div
 {
     display: inline-block;
@@ -232,19 +217,11 @@ body
     content: "";
     background: black;
     width: 4px;
-<<<<<<< HEAD
-    height: 20px;
-    position: absolute;
-    top: 18px;
-    right: -4px;
-    transform: rotate(134deg);
-=======
     height: 15px;
     position: absolute;
     top: 14px;
     right: -7px;
     transform: rotate(115deg);
->>>>>>> 6b50466 (recuperando del error de git)
 }
 .buscar >div>input
 {
@@ -274,8 +251,6 @@ body
 {
 width: 250px;
 }
-<<<<<<< HEAD
-=======
 
 @media (max-width: 768px) {
     .flexbox {
@@ -290,4 +265,3 @@ width: 250px;
         margin: 10px auto; /* Añade un margen arriba y abajo y centra el elemento horizontalmente */
     }
 }
->>>>>>> 6b50466 (recuperando del error de git)
