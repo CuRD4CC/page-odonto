@@ -90,7 +90,6 @@ body
         height: 300px;
     }
 }
-
 .container-tratamientos .card .imgBx img {
     max-width: 100%;
     border-radius: 4px;
@@ -193,18 +192,21 @@ body
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 .buscar
 {
-    margin: -10px;
+    margin: 0; /* Elimina el margen negativo */
+    position: absolute; /* Posiciona el elemento de forma absoluta */
+    right: 40px; /* Mueve el elemento hacia la derecha */
+    top: -40px; /* Mueve el elemento hacia arriba */
 }
-/* .buscar >h1
+.buscar >h1
 {
     color: blue;
     margin-bottom: 15px;
-} */
+}
 .buscar>div
 {
     display: inline-block;
@@ -215,11 +217,11 @@ body
     content: "";
     background: black;
     width: 4px;
-    height: 20px;
+    height: 15px;
     position: absolute;
-    top: 18px;
-    right: -4px;
-    transform: rotate(134deg);
+    top: 14px;
+    right: -7px;
+    transform: rotate(115deg);
 }
 .buscar >div>input
 {
@@ -248,4 +250,18 @@ body
 .buscar>div>input:not(:placeholder-shown)
 {
 width: 250px;
+}
+
+@media (max-width: 768px) {
+    .flexbox {
+        /* Modifica estas propiedades según tus necesidades */
+        justify-content: center; /* Centra los elementos horizontalmente */
+        align-items: center; /* Centra los elementos verticalmente */
+    }
+
+    .buscar {
+        /* Modifica estas propiedades según tus necesidades */
+        position: static; /* Hace que el elemento siga el flujo normal del documento */
+        margin: 10px auto; /* Añade un margen arriba y abajo y centra el elemento horizontalmente */
+    }
 }
