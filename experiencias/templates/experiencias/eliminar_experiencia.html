@@ -1,0 +1,15 @@
+{% extends "sub_base.html" %}
+{% load static %}
+
+{% block title %}
+Mis experiencias
+{% endblock title %}
+
+{% block content %}
+<h2>Eliminar experiencia</h2>
+<form method="POST">
+{% csrf_token %}
+¿Estás seguro de que quieres eliminar "{{ object }}"?
+<button type="submit">Sí, eliminar</button>
+</form>
+{% endblock content %}
