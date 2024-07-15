@@ -66,27 +66,50 @@
                                  <a class="nav-link" href={% url 'inicio' %}>Inicio</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="glasses.html">sin idea</a>
+                                 <a class="nav-link" href={% url 'tratamientos' %}>Tratamientos</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href={% url 'tratamientos' %}>Tratamientos</a>
+                                 <a class="nav-link" href="glasses.html">Experiencias</a>
                               </li>
                               <li class="nav-item">
                                  <a class="nav-link" href={% url 'contactanos' %}>Contactanos</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href={% url 'acercademi' %}>Acerca de mi</a>
+                                 <a class="nav-link" href={% url 'acercademi' %}>Autor</a>
                               </li>
+                              {% if request.user.is_authenticated %}
                               <li class="nav-item d_none login_btn">
-                                 <a class="nav-link" href={% url "login" %}>Login</a>
+                                 <a class="nav-link" href={% url "editar_perfil" %}>
+                                    {{request.user.username}}
+                                    </a>
+                                    {% if request.user.datosextra.avatar %}
+                                    <img src="{{ request.user.datosextra.avatar.url }}" alt="Avatar" width="20" height="20">
+                                    {% endif %}
                               </li>
-                              <li class="nav-item d_none">
-                                 <a class="nav-link" href="#">Register</a>
+                              <li class="nav-item">
+                                 <form action={% url "logout" %} method="POST">
+                                    {% csrf_token %}
+                                    <button type="submit" class="nav-link">Cerrar sesion</button>
+                                 </form>
                               </li>
-                              <li class="nav-item d_none sea_icon">
-                                 <a class="nav-link" href="#"><i class="fa fa-shopping-bag" aria-hidden="true"></i><i class="fa fa-search" aria-hidden="true"></i></a>
-                              </li>
+                              {% else %}
+                                 <li class="nav-item">
+                                    <a class="nav-link" href={% url 'login' %}>Login</a>
+                                 </li>
+                                 <li class="nav-item d_none">
+                                    <a class="nav-link" href={% url "registro" %}>Registrar</a>
+                                 </li>
+                              {% endif %}
+                              {% comment %} <li class="nav-item d_none sea_icon">
+                                 <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+                              </li> {% endcomment %}
                            </ul>
+                           <div class="flexbox">
+                              <div class="buscar">
+                                 {% comment %} <h1></h1> {% endcomment %}
+                              <div>
+                              <input type="text" placeholder="Buscar tratamientos..." required>
+                           </div>
                         </div>
                      </nav>
                   </div>
