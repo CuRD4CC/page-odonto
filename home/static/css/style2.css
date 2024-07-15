@@ -10,7 +10,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #001652;
+    /* background: linear-gradient(to bottom, #ffffff, #6dd0dd); */
 }
 
 .mi-body .container-tratamientos {
@@ -37,17 +37,17 @@
 }
 
 .mi-body .container-tratamientos .card:hover {
-    height: 420px;
+    height: 600px;
 }
 
 .mi-body .container-tratamientos .card .imgBx {
     position: relative;
     width: 260px;
     height: 260px;
-    top: 60px;
-    left: 20px;
+    top: -80px;
+    left: 4px;
     z-index: 1;
-    box-shadow: 0 5px 20px rgba(0,0,0,2);
+    /* box-shadow: 0 5px 20px rgba(0,0,0,2); */
 }
 
 .mi-body .container-tratamientos .card .imgBx img {
@@ -74,7 +74,7 @@
     text-align: center;
     visibility: visible;
     position: relative;
-    margin-top: -60px;
+    margin-top: -88px;
     padding: 10px 15px;
     z-index: 2;
     text-shadow: 2px 2px 2px rgb(214, 211, 211);
