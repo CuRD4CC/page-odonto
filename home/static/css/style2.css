@@ -37,7 +37,7 @@
 }
 
 .mi-body .container-tratamientos .card:hover {
-    height: 600px;
+    height: 520px;
 }
 
 .mi-body .container-tratamientos .card .imgBx {
@@ -84,7 +84,7 @@
     margin: 25px;
     font-weight: 500;
     font-size: 15px;
-    line-height: 24px;
+    line-height: 20px;
 }
 
 .mi-body .container-tratamientos .card:hover .content {
