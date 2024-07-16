@@ -106,9 +106,12 @@
                            </ul>
                            <div class="flexbox">
                               <div class="buscar">
-                                 {% comment %} <h1></h1> {% endcomment %}
-                              <div>
-                              <input type="text" placeholder="Buscar tratamientos..." required>
+                                 <form action="{% url 'buscar_tratamientos' %}" method="get">
+                                    <div>
+                                          <input type="text" name="q" placeholder="Buscar tratamientos..." required>
+                                    </div>
+                                 </form>
+                              </div>
                            </div>
                         </div>
                      </nav>

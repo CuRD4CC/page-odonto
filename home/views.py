@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect
+from django.urls import reverse
+from .models import Tratamiento
 
 def inicio(request):
     return render(request, 'home/index.html')
@@ -38,3 +40,30 @@ def tratamiento_ortodoncia(request):
 
 def tratamiento_periodoncia(request):
     return render(request, 'home/periodoncia.html')
+
+
+# buscador
+def buscar_tratamientos(request):
+    query = request.GET.get('q', '').lower()
+    if 'ortodoncia'.startswith(query):
+        return redirect(reverse('ortodoncia'))
+    elif 'cirugia oral'.startswith(query):
+        return redirect(reverse('cirugia'))
+    elif 'endodoncia'.startswith(query):
+        return redirect(reverse('endodoncia'))
+    elif 'estetica dental'.startswith(query):
+        return redirect(reverse('estetica_dental'))
+    elif 'higiene bucodental'.startswith(query):
+        return redirect(reverse('higiene_bucodental'))
+    elif 'implantologia'.startswith(query):
+        return redirect(reverse('implantologia'))
+    elif 'odontologia general'.startswith(query):
+        return redirect(reverse('odontologia_general'))
+    elif 'odontopediatria'.startswith(query):
+        return redirect(reverse('odontopediatria'))
+    elif 'periodoncia'.startswith(query):
+        return redirect(reverse('periodoncia'))
+
+    return render(request, 'home/resultados_busqueda.html', {'query': query})
+
+

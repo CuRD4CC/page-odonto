@@ -1,5 +1,6 @@
 from django.urls import path
 from home import views
+from .views import buscar_tratamientos
 
 urlpatterns = [
     path('', views.inicio, name='inicio'),
@@ -15,4 +16,5 @@ urlpatterns = [
     path('tratamientos/odontopediatria/', views.tratamiento_odontopediatria, name='odontopediatria'),
     path('tratamientos/ortodoncia/', views.tratamiento_ortodoncia, name='ortodoncia'),
     path('tratamientos/periodoncia/', views.tratamiento_periodoncia, name='periodoncia'),
+    path('buscar/', buscar_tratamientos, name='buscar_tratamientos'),
 ]

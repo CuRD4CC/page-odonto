@@ -1,0 +1,17 @@
+{% extends "sub_base.html" %}
+{% load static %}
+
+{% block title %}
+Resultados | Dra. Muelitas
+{% endblock title %}
+
+{% block content %}
+<div id="resultados">
+    <h2>Resultados de la búsqueda</h2>
+    {% if query %}
+        <p>No se encontraron resultados para "{{ query }}".</p>
+    {% else %}
+        <p>No se ingresó ningún término de búsqueda.</p>
+    {% endif %}
+</div>
+{% endblock content %}
