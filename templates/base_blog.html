@@ -16,6 +16,7 @@ TemplateMo 553 Xtra Blog
 https://templatemo.com/tm-553-xtra-blog
 
 -->
+{% block navegacion %}
 </head>
 <body>
 	<header class="tm-header" id="tm-header">
@@ -44,11 +45,12 @@ https://templatemo.com/tm-553-xtra-blog
                     </a></li>
                 </ul>
             </nav>
-            <p class="tm-mb-80 pr-5 text-white">
+            {% comment %} <p class="tm-mb-80 pr-5 text-white">
                 description
-            </p>
+            </p> {% endcomment %}
         </div>
     </header>
+    {% endblock navegacion %}
     {% block content %}
     <div class="container-fluid">
         <main class="tm-main">
@@ -200,7 +202,7 @@ https://templatemo.com/tm-553-xtra-blog
                     </div>
                 </article>
             </div>
-            {% endblock content %}
+    {% endblock content %}
             {% comment %} <div class="row tm-row tm-mt-100 tm-mb-75">
                 <div class="tm-prev-next-wrapper">
                     <a href="#" class="mb-2 tm-btn tm-btn-primary tm-prev-next disabled tm-mr-20">Prev</a>
