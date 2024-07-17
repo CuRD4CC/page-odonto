@@ -16,6 +16,9 @@ def eliminar_experiencia(request):
 def crear_experiencia(request):
     return render(request, 'home/crear_experiencia.html')
 
+def tu_resenia(request):
+    return render(request, 'experiencias/post.html')
+
 
 
 class CrearExperiencia(LoginRequiredMixin, CreateView):

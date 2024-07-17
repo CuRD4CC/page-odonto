@@ -31,14 +31,14 @@ https://templatemo.com/tm-553-xtra-blog
             <nav class="tm-nav" id="tm-nav">            
                 <ul>
                     <li class="tm-nav-item active"><a href="index.html" class="tm-nav-link">
-                        <i class="fas fa-home"></i>
+                        <i class="far fa-comments"></i>
                         Experiencias
                     </a></li>
-                    <li class="tm-nav-item"><a href="post.html" class="tm-nav-link">
+                    <li class="tm-nav-item"><a href="{% url "resenia" %}" class="tm-nav-link">
                         <i class="fas fa-pen"></i>
                         Tu experiencia
                     </a></li>
-                    <li class="tm-nav-item"><a href="index.html" class="tm-nav-link">
+                    <li class="tm-nav-item"><a href="{% url "inicio" %}" class="tm-nav-link">
                         <i class="fas fa-home"></i>
                         Inicio
                     </a></li>
@@ -49,6 +49,7 @@ https://templatemo.com/tm-553-xtra-blog
             </p>
         </div>
     </header>
+    {% block content %}
     <div class="container-fluid">
         <main class="tm-main">
             <!-- Search form -->
@@ -61,7 +62,7 @@ https://templatemo.com/tm-553-xtra-blog
                         </button>                                
                     </form>
                 </div>                
-            </div>            
+            </div>
             <div class="row tm-row">
                 <article class="col-12 col-md-6 tm-post">
                     <hr class="tm-hr-primary">
@@ -199,6 +200,7 @@ https://templatemo.com/tm-553-xtra-blog
                     </div>
                 </article>
             </div>
+            {% endblock content %}
             {% comment %} <div class="row tm-row tm-mt-100 tm-mb-75">
                 <div class="tm-prev-next-wrapper">
                     <a href="#" class="mb-2 tm-btn tm-btn-primary tm-prev-next disabled tm-mr-20">Prev</a>
