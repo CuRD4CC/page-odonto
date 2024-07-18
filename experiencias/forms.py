@@ -1,7 +1,8 @@
 from django import forms
-from .models import Experiencia
+from .models import BlogModel
 
-class ExperienciaForm(forms.ModelForm):
+
+class BlogForm(forms.ModelForm):
     class Meta:
-        model = Experiencia
-        fields = ['titulo', 'imagen', 'texto']
+        model = BlogModel
+        fields = ['title', 'content']

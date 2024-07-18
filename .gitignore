@@ -284,3 +284,6 @@ pyrightconfig.json
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/python,django,visualstudiocode
+
+# Froala_editor
+uploads/froala_editor/images/

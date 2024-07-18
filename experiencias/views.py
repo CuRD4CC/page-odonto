@@ -1,11 +1,9 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Experiencia
-from .forms import ExperienciaForm
+from .forms import *
+from django.contrib.auth import logout
 
-def mi_experiencia(request):
-    return render(request, 'experiencias/mi_experiencia.html')
+# def mi_experiencia(request):
+#     return render(request, 'experiencias/mi_experiencia.html')
 
 def editar_experiencia(request):
     return render(request, 'experiencias/editar_experiencia.html')
@@ -14,28 +12,38 @@ def eliminar_experiencia(request):
     return render(request, 'experiencias/eliminar_experiencia.html')
 
 def crear_experiencia(request):
-    return render(request, 'home/crear_experiencia.html')
+    return render(request, 'experiencias/crear_experiencia.html')
 
 def tu_resenia(request):
     return render(request, 'experiencias/post.html')
 
 
+#### modificando el blog ###
+def mi_experiencia(request):
+    context = {'blogs': BlogModel.objects.all()}
+    return render(request, 'experiencias/mi_experiencia.html', context)
 
-class CrearExperiencia(LoginRequiredMixin, CreateView):
-    model = Experiencia
-    form_class = ExperienciaForm
-    template_name = 'usuarios/crear_experiencia.html'
+def aniadir_blog(request):
+    context = {'form': BlogForm}
+    try:
+        if request.method == 'POST':
+            form = BlogForm(request.POST)
+            print(request.FILES)
+            image = request.FILES.get('image', '')
+            title = request.POST.get('title')
+            user = request.user
 
-    def form_valid(self, form):
-        form.instance.usuario = self.request.user
-        return super().form_valid(form)
+            if form.is_valid():
+                print('Valid')
+                content = form.cleaned_data['content']
 
-class EditarExperiencia(LoginRequiredMixin, UpdateView):
-    model = Experiencia
-    form_class = ExperienciaForm
-    template_name = 'usuarios/editar_experiencia.html'
+            blog_obj = BlogModel.objects.create(
+                user=user, title=title,
+                content=content, image=image
+            )
+            print(blog_obj)
+            return redirect('/add-blog/')
+    except Exception as e:
+        print(e)
 
-class EliminarExperiencia(LoginRequiredMixin, DeleteView):
-    model = Experiencia
-    template_name = 'usuarios/eliminar_experiencia.html'
-    success_url = '/experiencias/'
+    return render(request, 'experiencias/crear_experiencias.html', context)

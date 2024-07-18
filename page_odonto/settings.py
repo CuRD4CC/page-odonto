@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'home',
     'usuarios',
     'experiencias',
+    'froala_editor',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
