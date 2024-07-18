@@ -16,22 +16,23 @@ TemplateMo 553 Xtra Blog
 https://templatemo.com/tm-553-xtra-blog
 
 -->
-{% block navegacion %}
+
 </head>
 <body>
+    {% block navegacion %}
 	<header class="tm-header" id="tm-header">
         <div class="tm-header-wrapper">
             <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
             </button>
             <div class="tm-site-header">
-                <div class="mb-3 mx-auto tm-site-logo"><i class="fas fa-times fa-2x"></i></div>            
+                <div class="mb-3 mx-auto tm-site-logo"><img src="{% static 'images/logo_grande_contorno.png' %}" alt="#" width="220" class="fa-2x"></div>            
+                <br>
                 <h1 class="text-center">Mis Experiencias</h1>
-                <h2 class="text-center">Dra. Muelitas</h2>
             </div>
             <nav class="tm-nav" id="tm-nav">            
                 <ul>
-                    <li class="tm-nav-item active"><a href="index.html" class="tm-nav-link">
+                    <li class="tm-nav-item active"><a href="{% url "experiencias" %}" class="tm-nav-link">
                         <i class="far fa-comments"></i>
                         Experiencias
                     </a></li>
@@ -64,7 +65,7 @@ https://templatemo.com/tm-553-xtra-blog
                         </button>                                
                     </form>
                 </div>                
-            </div>
+            </div>            
             <div class="row tm-row">
                 <article class="col-12 col-md-6 tm-post">
                     <hr class="tm-hr-primary">
@@ -202,8 +203,7 @@ https://templatemo.com/tm-553-xtra-blog
                     </div>
                 </article>
             </div>
-    {% endblock content %}
-            {% comment %} <div class="row tm-row tm-mt-100 tm-mb-75">
+            <div class="row tm-row tm-mt-100 tm-mb-75">
                 <div class="tm-prev-next-wrapper">
                     <a href="#" class="mb-2 tm-btn tm-btn-primary tm-prev-next disabled tm-mr-20">Prev</a>
                     <a href="#" class="mb-2 tm-btn tm-btn-primary tm-prev-next">Next</a>
@@ -227,9 +227,8 @@ https://templatemo.com/tm-553-xtra-blog
                         </ul>
                     </nav>
                 </div>                
-            </div>             {% endcomment %}
-        </main>
-    </div>
+            </div>
+    {% endblock content %}
     <script src="{% static "experiencias/js/jquery2.min.js" %}"></script>
     <script src="{% static "experiencias/js/templatemo-script.js" %}"></script>
 </body>

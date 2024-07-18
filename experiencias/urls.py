@@ -11,3 +11,4 @@ urlpatterns = [
     path('experiencias/eliminar/<int:pk>/', EliminarExperiencia.as_view(), name='eliminar'),
 ]
 
+

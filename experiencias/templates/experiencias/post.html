@@ -5,22 +5,22 @@
 Hacer una reseña
 {% endblock title %}
 
-{% block navegacion %}
 </head>
 <body>
+    {% block navegacion %}
 	<header class="tm-header" id="tm-header">
         <div class="tm-header-wrapper">
             <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
             </button>
             <div class="tm-site-header">
-                <div class="mb-3 mx-auto tm-site-logo"><i class="fas fa-times fa-2x"></i></div>            
+                <div class="mb-3 mx-auto tm-site-logo"><img src="{% static 'images/logo_grande_contorno.png' %}" alt="#" width="220" class="fa-2x"></div>            
+                <br>
                 <h1 class="text-center">Mis Experiencias</h1>
-                <h2 class="text-center">Dra. Muelitas</h2>
             </div>
             <nav class="tm-nav" id="tm-nav">            
                 <ul>
-                    <li class="tm-nav-item"><a href="index.html" class="tm-nav-link">
+                    <li class="tm-nav-item"><a href="{% url "experiencias" %}" class="tm-nav-link">
                         <i class="far fa-comments"></i>
                         Experiencias
                     </a></li>
@@ -179,14 +179,6 @@ Hacer una reseña
                     </div>                    
                 </aside>
             </div>
-            <footer class="row tm-row">
-                <div class="col-md-6 col-12 tm-color-gray">
-                    Design: <a rel="nofollow" target="_parent" href="https://templatemo.com" class="tm-external-link">TemplateMo</a>
-                </div>
-                <div class="col-md-6 col-12 tm-color-gray tm-copyright">
-                    Copyright 2020 Xtra Blog Company Co. Ltd.
-                </div>
-            </footer>
         </main>
     </div>
     <script src="js/jquery.min.js"></script>
