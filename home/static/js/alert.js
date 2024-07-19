@@ -12,7 +12,7 @@ function confirmLogout(event) {
         if (result.isConfirmed) {
             Swal.fire({
                 title: "Hasta luego",
-                text: "Ha cerrado sesión",
+                // text: "Ha cerrado sesión",
                 icon: "success"
             });
             // Submit the form
