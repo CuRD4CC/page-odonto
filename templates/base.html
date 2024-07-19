@@ -87,9 +87,9 @@
                                     {% endif %}
                               </li>
                               <li class="nav-item">
-                                 <form action={% url "logout" %} method="POST">
+                                 <form action="{% url 'logout' %}" method="POST">
                                     {% csrf_token %}
-                                    <button type="submit" class="nav-link">Cerrar sesion</button>
+                                    <button type="submit" onclick="confirmLogout(event)" class="nav-link">Cerrar sesion</button>
                                  </form>
                               </li>
                               {% else %}
@@ -258,7 +258,10 @@
       <script src="{% static "js/custom.js" %}"></script>
       <!-- scripts buscador -->
       <script src="{% static "script.js" %}"></script>
-      <!-- end buscador -->
+      <!-- sweetalert2.js -->
+      <script src="{% static "js/sweetalert2.js" %}"></script>
+      <script src="{% static "js/alert.js" %}"></script>
+
    </body>
 </html>
 
