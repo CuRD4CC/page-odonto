@@ -226,3 +226,16 @@ width: 250px;
         margin: 10px auto; /* Añade un margen arriba y abajo y centra el elemento horizontalmente */
     }
 }
+
+/*          Avatar */
+.myapp-avatar{
+    border-radius: 50%;
+    border: 4px solid slateblue;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    /* position: absolute;
+    top: 50px;
+    left: 50px; */
+}

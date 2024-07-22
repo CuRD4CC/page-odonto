@@ -83,7 +83,7 @@
                                     {{request.user.username}}
                                     </a>
                                     {% if request.user.datosextra.avatar %}
-                                    <img src="{{ request.user.datosextra.avatar.url }}" alt="Avatar" width="20" height="20">
+                                    <img class="myapp-avatar" src="{{ request.user.datosextra.avatar.url }}" alt="Avatar">
                                     {% endif %}
                               </li>
                               <li class="nav-item">
