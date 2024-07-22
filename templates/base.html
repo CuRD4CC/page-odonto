@@ -79,21 +79,21 @@
                                  <a class="nav-link" href={% url 'acercademi' %}>Autor</a>
                               </li>
                               {% if request.user.is_authenticated %}
+                              <li class="nav-item">
+                                 <form action="{% url 'logout' %}" method="POST">
+                                    {% csrf_token %}
+                                    <button type="submit" onclick="confirmLogout(event)" class="nav-link">Cerrar sesion</button>
+                                 </form>
+                              </li>
                               <li class="nav-item d_none login_btn">
                                  <div class="user-info">
-                                    <a class="nav-link" href={% url "editar_perfil" %}>
+                                    <a class="nav-link" href={% url "ver_perfil" %}>
                                        {{request.user.username}}
                                     </a>
                                     {% if request.user.datosextra.avatar %}
                                        <img class="myapp-avatar" src="{{ request.user.datosextra.avatar.url }}" alt="Avatar">
                                     {% endif %}
                                  </div>
-                              </li>
-                              <li class="nav-item">
-                                 <form action="{% url 'logout' %}" method="POST">
-                                    {% csrf_token %}
-                                    <button type="submit" onclick="confirmLogout(event)" class="nav-link">Cerrar sesion</button>
-                                 </form>
                               </li>
                               {% else %}
                                  <li class="nav-item">
