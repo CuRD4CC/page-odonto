@@ -16,6 +16,7 @@
       <meta name="author" content="">
       <!-- bootstrap css -->
       <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+      <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
       <!-- style css2 -->
       <link rel="stylesheet" href="{% static 'css/style2.css' %}">
       <!-- style css -->
@@ -79,12 +80,14 @@
                               </li>
                               {% if request.user.is_authenticated %}
                               <li class="nav-item d_none login_btn">
-                                 <a class="nav-link" href={% url "editar_perfil" %}>
-                                    {{request.user.username}}
+                                 <div class="user-info">
+                                    <a class="nav-link" href={% url "editar_perfil" %}>
+                                       {{request.user.username}}
                                     </a>
                                     {% if request.user.datosextra.avatar %}
-                                    <img class="myapp-avatar" src="{{ request.user.datosextra.avatar.url }}" alt="Avatar">
+                                       <img class="myapp-avatar" src="{{ request.user.datosextra.avatar.url }}" alt="Avatar">
                                     {% endif %}
+                                 </div>
                               </li>
                               <li class="nav-item">
                                  <form action="{% url 'logout' %}" method="POST">
