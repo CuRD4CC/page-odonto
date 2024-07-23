@@ -9,5 +9,3 @@ urlpatterns = [
     path('aniadir-experiencia/', views.aniadir_blog, name='aniadir_blog'),
     
 ]
-
-

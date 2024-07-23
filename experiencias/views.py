@@ -2,8 +2,6 @@ from django.shortcuts import render, redirect
 from .forms import *
 from django.contrib.auth import logout
 
-# def mi_experiencia(request):
-#     return render(request, 'experiencias/mi_experiencia.html')
 
 def editar_experiencia(request):
     return render(request, 'experiencias/editar_experiencia.html')
@@ -42,8 +40,8 @@ def aniadir_blog(request):
                 content=content, image=image
             )
             print(blog_obj)
-            return redirect('/add-blog/')
+            return redirect('/crear-experiencia/')
     except Exception as e:
         print(e)
 
-    return render(request, 'experiencias/crear_experiencias.html', context)
+    return render(request, 'experiencias/crear_experiencia.html', context)
