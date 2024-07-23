@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from .forms import *
+from .models import BlogModel
 from django.contrib.auth import logout
 
 
@@ -13,16 +15,14 @@ def crear_experiencia(request):
     form = BlogForm()
     return render(request, 'experiencias/crear_experiencia.html', {'form': form})
 
-
 def tu_resenia(request):
     return render(request, 'experiencias/post.html')
 
-
-#### modificando el blog ###
 def mi_experiencia(request):
     context = {'blogs': BlogModel.objects.all()}
     return render(request, 'experiencias/mi_experiencia.html', context)
 
+@login_required
 def aniadir_blog(request):
     form = BlogForm()
     context = {'form': form}
@@ -40,11 +40,12 @@ def aniadir_blog(request):
                     user=user, title=title,
                     content=content, image=image
                 )
-                return redirect('/crear-experiencia/')
+                return redirect('experiencias')
             else:
                 print('Form is not valid')
                 print(form.errors)
     except Exception as e:
         print(f'Error: {e}')
 
-    return render(request, 'experiencias/crear_experiencia.html', context)
+    return render(request, 'experiencias/mi_experiencia.html', context)
+

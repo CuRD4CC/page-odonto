@@ -6,8 +6,8 @@ Mis experiencias
 {% endblock title %}
 
 {% block content %}
-<div class="container-fluid">
-    <main class="tm-main">
+{% comment %} <div class="container-fluid">
+    <main class="tm-main"> {% endcomment %}
         <!-- Search form -->
         {% comment %} <div class="row tm-row">
             <div class="col-12">
@@ -19,32 +19,39 @@ Mis experiencias
                 </form>
             </div>                
         </div>             {% endcomment %}
-        {% for blog in blogs  %}
-        <div class="row tm-row">
-            <article class="col-12 col-md-6 tm-post">
-                <hr class="tm-hr-primary">
-                <a href="{% url "resenia" %}" class="effect-lily tm-post-link tm-pt-60">
-                    <div class="tm-post-link-inner">
-                        <img src="/media/{{blog.image}}" alt="Image" class="img-fluid">                            
+        <section class="py-6">
+            <div class="container">
+                <div class="row mb-5">
+                {% for blog in blogs %}
+                <div class="col-lg-4 col-sm-6 mb-4 hover-animate">
+                    <div class="card shadow border-0 h-100">
+                        <a href="#">
+                        <img class="img-fluid card-img-top" src="/media/{{blog.image}}" alt="..."/></a>
+                        <div class="card-body"><a class="text-uppercase text-muted text-sm letter-spacing-2" href="#">
+                        {{blog.user.username}} </a>
+                        <h5 class="my-2"><a class="text-dark" href="#">
+                        {{blog.title}}          </a></h5>
+                        <p class="text-gray-500 text-sm my-3"><i class="far fa-clock mr-2"></i>
+                            {{blog.created_at}}</p>
+                        <!-- <p class="my-2 text-muted text-sm">
+                            {{blog.content|safe}}
+                        </p>
+                        -->
+                        <a class="btn btn-link pl-0"href="#">Read more<i class="fa fa-long-arrow-alt-right ml-2"></i></a> 
+                        </div>
                     </div>
-                    <span class="position-absolute tm-new-badge">{{blog.user.username}}</span>
-                    <h2 class="tm-pt-30 tm-color-primary tm-post-title">{{blog.title}} </h2>
-                </a>                    
-                <p class="tm-pt-30">
-                    {% comment %} {{blog.summary}} {% endcomment %}
-                </p>
-                <div class="d-flex justify-content-between tm-pt-45">
-                    <span class="tm-color-primary">"#"</span>
-                    <span class="tm-color-primary">{{blog.created_at}}</span>
                 </div>
-                <hr>
-                <div class="d-flex justify-content-between">
-                    <span>"#"</span>
-                    <span>{{blog.user.username}}</span>
-                </div>
-            </article>
+                {% endfor %}
+            </div>
+            <!-- Pagination -->
+            <nav aria-label="Blog pagination">
+            <ul class="pagination justify-content-between mb-5">
+                <li class="page-item"><a class="page-link text-sm rounded" href="#"> <i class="fa fa-chevron-left mr-1"></i>Older posts</a></li>
+                <li class="page-item disabled"><a class="page-link text-sm rounded" href="#" tabindex="-1">Newer posts  <i class="fa fa-chevron-right ml-1"></i></a></li>
+            </ul>
+            </nav>
         </div>
-        {% endfor %}
+        </section>
 
 {% endblock content %}
 
