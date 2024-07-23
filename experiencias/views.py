@@ -10,7 +10,9 @@ def eliminar_experiencia(request):
     return render(request, 'experiencias/eliminar_experiencia.html')
 
 def crear_experiencia(request):
-    return render(request, 'experiencias/crear_experiencia.html')
+    form = BlogForm()
+    return render(request, 'experiencias/crear_experiencia.html', {'form': form})
+
 
 def tu_resenia(request):
     return render(request, 'experiencias/post.html')
@@ -22,26 +24,27 @@ def mi_experiencia(request):
     return render(request, 'experiencias/mi_experiencia.html', context)
 
 def aniadir_blog(request):
-    context = {'form': BlogForm}
+    form = BlogForm()
+    context = {'form': form}
     try:
         if request.method == 'POST':
-            form = BlogForm(request.POST)
-            print(request.FILES)
-            image = request.FILES.get('image', '')
+            form = BlogForm(request.POST, request.FILES)
             title = request.POST.get('title')
             user = request.user
 
             if form.is_valid():
-                print('Valid')
                 content = form.cleaned_data['content']
+                image = request.FILES.get('image', '')
 
-            blog_obj = BlogModel.objects.create(
-                user=user, title=title,
-                content=content, image=image
-            )
-            print(blog_obj)
-            return redirect('/crear-experiencia/')
+                blog_obj = BlogModel.objects.create(
+                    user=user, title=title,
+                    content=content, image=image
+                )
+                return redirect('/crear-experiencia/')
+            else:
+                print('Form is not valid')
+                print(form.errors)
     except Exception as e:
-        print(e)
+        print(f'Error: {e}')
 
     return render(request, 'experiencias/crear_experiencia.html', context)
