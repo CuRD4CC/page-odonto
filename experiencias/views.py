@@ -27,7 +27,13 @@ def PostBlog(request, slug):
     context = {}
     try:
         blog_obj = BlogModel.objects.filter(slug=slug).first()
-        context['blog_obj'] = blog_obj
+        if blog_obj:
+            context['blog_obj'] = blog_obj
+            context['title'] = blog_obj.title
+            context['content'] = blog_obj.content
+            context['created_at'] = blog_obj.created_at
+            context['image'] = blog_obj.image.url if blog_obj.image else None
+            context['username'] = blog_obj.user.username if blog_obj.user else "Anonymous"
     except Exception as e:
         print(e)
     return render(request, 'experiencias/post.html', context)
