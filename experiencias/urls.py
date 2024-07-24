@@ -7,5 +7,5 @@ urlpatterns = [
     path('resenia/', views.tu_resenia, name='resenia'),
     path('crear-experiencia/', views.crear_experiencia, name='crear_experiencia'),
     path('aniadir-experiencia/', views.aniadir_blog, name='aniadir_blog'),
-    
+    path('ver-experiencia/<slug>', views.PostBlog, name='post'),
 ]

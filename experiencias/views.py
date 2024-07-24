@@ -23,6 +23,16 @@ def mi_experiencia(request):
     return render(request, 'experiencias/mi_experiencia.html', context)
 
 @login_required
+def PostBlog(request, slug):
+    context = {}
+    try:
+        blog_obj = BlogModel.objects.filter(slug=slug).first()
+        context['blog_obj'] = blog_obj
+    except Exception as e:
+        print(e)
+    return render(request, 'experiencias/post.html', context)
+
+@login_required
 def aniadir_blog(request):
     form = BlogForm()
     context = {'form': form}
